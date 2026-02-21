@@ -2,7 +2,8 @@ import express from 'express';
 import User from './models/usuarioModel.js';
 
 const app = express();
-const port = 3000;
+// Usa a porta definida pelo ambiente ou 3000 como padrão
+const port = process.env.PORT || 3000;
 
 // Rota async para buscar usuários
 app.get('/usuarios', async (req, res) => {
@@ -18,6 +19,5 @@ app.get('/usuarios', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Servidor rodando na porta http://localhost:${port}`);
+  console.log(`Servidor rodando na porta ${port}`);
 });
- 
